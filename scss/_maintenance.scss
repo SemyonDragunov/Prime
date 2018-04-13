@@ -1,0 +1,46 @@
+// Maintenance page.
+// =================
+
+// Styles for errors pages.
+// ========================
+
+section#page-maintenance {
+  height: 100vh;
+  width: 100%;
+  display: table;
+
+  h1 {
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 60%;
+
+    @include susy-breakpoint($phone-only-breakpoint) {
+      @include span(full);
+    }
+
+    @include susy-breakpoint($tablet-only-breakpoint) {
+      width: 80%;
+    }
+  }
+
+  .vertical {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .logo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .horizontal {
+    margin: 0 auto;
+  }
+
+  .controls {
+    margin-top: 15px;
+    text-align: center;
+  }
+}

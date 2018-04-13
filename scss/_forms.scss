@@ -1,0 +1,173 @@
+// Form styles.
+// ===========
+
+form {
+  label {
+    margin-bottom: 5px;
+    display: block;
+    color: black;
+    font-weight: 700;
+  }
+
+  .form-item {
+    margin-bottom: 15px;
+  }
+
+  span.form-required {
+    color: red;
+    display: inline-block;
+  }
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: $base-color-text;
+  text-overflow: ellipsis;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: red;
+  text-overflow: ellipsis;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  @include transition(all 0.2s ease-in);
+  width: 100%;
+  height: $form-element-height;
+  padding: 5px 10px;
+  border: none;
+  border-left: 3px solid;
+  display: block;
+  background-color: $grey-color-elem;
+  color: black;
+  -moz-appearance:    textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  font-size: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  &:-moz-placeholder,
+  &::-moz-placeholder {
+    color: black;
+    text-overflow: ellipsis;
+  }
+  &:active,
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+  &.disabled,
+  &:disabled,
+  &[disabled],
+  &[readonly] {
+    border-left-color: $grey-color-elem;
+  }
+
+  &.error {
+    border: 1px solid red;
+    color: red;
+  }
+  &.valid {
+    border: 1px solid green;
+    color: green;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  display: inline-block;
+  max-width: 100%;
+}
+
+select[multiple] {
+  min-height: 100px;
+}
+
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+
+fieldset {
+  border: 1px solid $grey-color-elem;
+  padding: 15px;
+  margin-bottom: $base-margin;
+
+  legend {
+    font-weight: bold;
+    padding: 0 2px;
+    margin: 0;
+    margin-left: -2px;
+  }
+}
+
+.switch {
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    @include transition(all 0.2s ease-in);
+    width: 40px;
+    height: 20px;
+    background-color: $grey-color-elem;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+
+    &:after {
+      @include transition(all 0.2s ease-in);
+      width: 15px;
+      height: 14px;
+      top: 3px;
+      left: 4px;
+      z-index: 1;
+      background-color: white;
+      content: "";
+      display: block;
+      position: absolute;
+    }
+  }
+
+  ~ label.option {
+    margin-left: 50px;
+  }
+
+  input {
+    + label {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &:checked + label {
+      &:after {
+        left: 21px;
+      }
+    }
+
+    &:disabled + label {
+      &:after {
+        background-color: $grey-color-elem;
+      }
+    }
+  }
+}

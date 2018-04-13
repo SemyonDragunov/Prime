@@ -1,0 +1,87 @@
+// Education basic style file.
+// ===========================
+
+// Add dependencies.
+@import "../bower_components/susy/sass/susy";
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/reset-css/reset";
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../font/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../font/Roboto-Regular.ttf");
+}
+
+// Variables.
+$susy: (
+  columns: 3,
+  gutters: 1/10,
+  global-box-sizing: border-box,
+  use-custom: (
+    rem: true,
+  )
+);
+
+$phone-only-breakpoint: (
+  max-width: 767px,
+);
+
+$tablet-only-breakpoint: (
+  min-width: 768px,
+  max-width: 1119px,
+);
+
+$tablet-up-breakpoint: (
+  min-width: 768px,
+);
+
+$big-screen-up-breakpoint: (
+  min-width: 1200px,
+);
+
+$font-size: 16px;
+$base-margin: 15px;
+$base-padding-wrapper: 50px;
+
+$form-element-height: 40px;
+
+$base-color-text: #777;
+$base-color-bg: #f7f7f7;
+
+$grey-color-text: #999999;
+$grey-color-elem: #c3c3c3;
+
+$dark-color-text: #333;
+$dark-color-bg: #232323;
+
+// Mixin.
+@mixin to-margin-last($side: right, $margin: $base-margin) {
+  margin-#{$side}: $margin;
+
+  &:last-child {
+    margin-#{$side}: 0;
+  }
+}
+
+@mixin to-hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+// Import other files theme.
+@import "theme";
+@import "construction";
+@import "typography";
+@import "buttons";
+@import "forms";
+@import "errors";
+@import "login";
+@import "maintenance";
+@import "elements";
+@import "comments";

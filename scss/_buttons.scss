@@ -1,0 +1,85 @@
+// Buttons styles.
+
+.button {
+  line-height: $form-element-height;
+}
+
+// Fix bug.
+input[type="submit"] {
+  line-height: 0;
+}
+
+.button,
+#{$all-buttons} {
+  @include transition(all 0.2s ease-in);
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  height: $form-element-height;
+  padding: 0 18px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  position: relative;
+  border: 2px solid transparent;
+  color: white;
+  font-size: $font-size;
+  font-weight: 700;
+  margin-right: 5px;
+  text-decoration: none !important;
+  border-width: 2px;
+  border-style: solid;
+
+  &:last-child,
+  & + & {
+    margin-right: 0;
+  }
+
+  &.border {
+    background-color: transparent;
+
+    &.white {
+      border: 2px solid white !important;
+      color: white !important;
+    }
+  }
+
+  &.big {
+    height: $form-element-height * 1.5;
+    padding: 0 28px;
+    font-size: $font-size + 2;
+    line-height: $form-element-height * 1.5;
+  }
+
+  &.small {
+    height: $form-element-height / 1.5;
+    padding: 0 5px;
+    font-size: $font-size - 4;
+    line-height: $form-element-height / 1.5;
+  }
+
+  &.expand {
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  &.disabled,
+  &:disabled,
+  &[disabled] {
+    color: white !important;
+    opacity:            0.5;
+    -moz-opacity:       0.5;
+    -khtml-opacity:     0.5;
+    -webkit-opacity:    0.5;
+    pointer-events: none;
+  }
+}
+
+.button:hover,
+.button:focus,
+#{$all-buttons-focus},
+#{$all-buttons-hover} {
+  color: white;
+  text-decoration: none !important;
+}

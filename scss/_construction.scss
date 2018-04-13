@@ -1,0 +1,98 @@
+// Construction & adaptive.
+// ========================
+
+@mixin to-region() {
+  padding: $base-margin;
+  box-sizing: border-box;
+}
+
+@mixin to-base-section() {
+  @include susy-breakpoint($phone-only-breakpoint) {
+    padding-bottom: $base-margin;
+    padding-top: $base-margin;
+  }
+
+  @include susy-breakpoint($tablet-only-breakpoint) {
+    padding-bottom: $base-margin * 2;
+    padding-top: $base-margin * 2;
+  }
+
+  @include susy-breakpoint($big-screen-up-breakpoint) {
+    padding-bottom: $base-padding-wrapper;
+    padding-top: $base-padding-wrapper;
+  }
+}
+
+.container {
+  @include container(80em);
+  @include gutter(inside);
+}
+
+.region-front {
+  > .block {
+    @include to-base-section;
+  }
+}
+
+header {
+  .header-left,
+  .header-right {
+    @include susy-breakpoint($phone-only-breakpoint) {
+      @include span(full);
+    }
+  }
+}
+
+section.h1-page {
+  @include susy-clearfix;
+  @include to-base-section;
+
+  h1 {
+    @include susy-breakpoint($phone-only-breakpoint) {
+      @include span(full);
+    }
+  }
+}
+
+section.content {
+  @include to-base-section;
+}
+
+main {
+  @include span(2 of 3 1/10 last);
+  @include to-region;
+
+  @include susy-breakpoint($phone-only-breakpoint) {
+    @include span(full);
+  }
+
+  body.no-sidebars & {
+    @include span(full);
+  }
+}
+
+#sidebar-first {
+  @include span(1 of 3 1/10 first);
+  @include to-region;
+
+  @include susy-breakpoint($phone-only-breakpoint) {
+    @include span(full);
+  }
+}
+
+footer {
+  @include to-base-section;
+
+  .region-footer,
+  .region-footer-right {
+    @include span(1 of 2);
+
+    @include susy-breakpoint($phone-only-breakpoint) {
+      @include span(full);
+    }
+  }
+
+  .region-footer-right {
+    @include last;
+  }
+}

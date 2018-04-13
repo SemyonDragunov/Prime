@@ -1,0 +1,23 @@
+name = Prime
+description = Adaptive theme for Drupal.
+package = Core
+core = 7.x
+
+stylesheets[all][] = css/prime.css
+stylesheets[all][] = color/color.css
+
+dependencies[] = color
+
+; Regions.
+regions[action] = Действия
+regions[help] = Help
+regions[content] = Content
+regions[slider] = Слайдер
+regions[front] = Главная страница
+regions[sidebar_first] = Sidebar first
+regions[footer] = Подвал (лево)
+regions[footer_right] = Подвал (право)
+
+; This two regions is required by Drupal Core. Don't remove them, they not display in block list.
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom

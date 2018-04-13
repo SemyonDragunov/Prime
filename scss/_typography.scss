@@ -1,0 +1,85 @@
+// Typography.
+// ===========
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 $base-margin;
+  line-height: normal;
+  color: #333;
+  padding-bottom: $base-margin;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 50px;
+    height: 2px;
+    background-color: $grey-color-elem;
+  }
+
+  &.white {
+    color: #fff;
+  }
+
+  &.element-invisible {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 24px;
+}
+
+a {
+  @include transition(all 0.2s ease-in);
+  color: $base-color-text;
+  cursor: pointer;
+  text-decoration: none;
+
+
+  &:hover,
+  &:focus {
+    color: $base-color-text;
+  }
+
+  .dark & {
+    color: white;
+  }
+}
+
+img {
+  vertical-align: bottom;
+}
+
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted $base-color-text;
+}

@@ -1,0 +1,193 @@
+// Elements.
+// =========
+
+*:focus {
+  outline: none;
+}
+
+img,
+embed {
+  @include susy-breakpoint($phone-only-breakpoint) {
+    display: block;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+// Search.
+
+#block-search-form {
+  .form-item {
+    width: 75%;
+    display: block;
+    float: left;
+    margin-bottom: 0;
+  }
+
+  .form-actions {
+    width: 25%;
+    display: block;
+    float: left;
+
+    input {
+      width: 100%;
+      margin-right: 76px;
+    }
+  }
+}
+
+// Tables.
+
+table {
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 15px;
+
+  > thead {
+    > tr {
+      > th {
+        text-align: left;
+        vertical-align: bottom;
+        border-bottom: 2px solid $grey-color-elem;
+        padding: 8px;
+
+        @include susy-breakpoint($phone-only-breakpoint) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  > tbody {
+    > tr {
+      @include transition(all 0.3s ease-in-out);
+
+      &.odd {
+        background-color: $grey-color-elem;
+      }
+      &.even {
+        background-color: transparent;
+      }
+
+      &:hover {
+        background-color: $grey-color-elem;
+      }
+
+      > td,
+      > th {
+        padding: 8px;
+        line-height: 1.42857;
+        vertical-align: top;
+        border-top: 1px solid $grey-color-elem;
+
+        @include susy-breakpoint($phone-only-breakpoint) {
+          padding: 0;
+        }
+      }
+
+      > th {
+        text-align: left;
+      }
+    }
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .ctools-dropbutton-processed {
+    margin-top: -3.2px;
+  }
+}
+
+// Pagination.
+
+ul.pager {
+  @include susy-clearfix;
+  line-height: normal;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+
+  .ajax-progress {
+    display: none;
+  }
+
+  li {
+    @include to-margin-last(right, 5px);
+    display: inline-block;
+    list-style: outside none none;
+    cursor: not-allowed;
+    border-style: solid;
+    border-width: 2px;
+
+    a,
+    &.pager-current {
+      display: inline-block;
+      padding: 6px 10px;
+      color: white;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+
+      a {
+        cursor: not-allowed;
+      }
+    }
+
+    .ajax-progress {
+      display: none;
+    }
+  }
+}
+
+// View.
+
+.view {
+  > .view-content {
+    @include susy-clearfix;
+  }
+}
+
+// Calendar.
+
+.date-nav-wrapper {
+  ul.pager {
+    li {
+      border-radius: 5px !important;
+      padding: 0 !important;
+
+      @include susy-breakpoint($phone-only-breakpoint) {
+        margin-top: 32px;
+      }
+
+      &.date-prev,
+      &.date-next {
+        background-color: transparent !important;
+        border: none !important;
+      }
+
+      &.date-prev {
+        right: 110px;
+
+        a {
+          text-align: left;
+        }
+      }
+
+      a {
+        border: none !important;
+        background-color: #dfdfdf;
+        margin: 0;
+      }
+    }
+  }
+}

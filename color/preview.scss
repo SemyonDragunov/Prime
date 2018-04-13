@@ -1,0 +1,74 @@
+@import "../bower_components/susy/sass/susy";
+
+$default-color: #ef5417;
+
+#container-wrapper {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+
+  div,
+  header,
+  aside,
+  ul {
+    &:after {
+      @include susy-clearfix;
+    }
+  }
+}
+
+#container {
+  width:500px;
+  margin:0 auto;
+  background: white;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.19);
+}
+
+#header-top {
+  background-color: #F7F7F7;
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+  padding: 7px;
+}
+
+#header {
+  @include susy-clearfix;
+  padding: 7px;
+
+  .column {
+    @include span(1 of 2);
+
+    &:nth-child(2n) {
+      @include last;
+    }
+  }
+
+  .right-side {
+    > span {
+      @include span(1 of 4);
+
+      &:nth-child(4n) {
+        @include last;
+      }
+    }
+  }
+}
+
+#h1-page {
+  background: #333;
+  margin: 0 15px;
+  height: 30px
+}
+
+.pseudo-text-1  {
+  background: #919191;
+  height: 14px;
+  width: 100%;
+  display: inline-block
+}
+.pseudo-link-1 {
+  background: $default-color;
+  height: 14px;
+  width: 100%;
+  display: inline-block
+}

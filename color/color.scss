@@ -1,0 +1,85 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+$color-main: #ef5417;
+
+a {
+  color: $color-main;
+}
+
+.button,
+#{$all-buttons} {
+  border-color: $color-main;
+  color: $color-main;
+}
+
+.button:hover,
+.button:focus,
+#{$all-buttons-focus},
+#{$all-buttons-hover} {
+  background-color: $color-main;
+}
+
+ul.pager {
+  li {
+    border-color: $color-main;
+
+    &.pager-current {
+      color: $color-main;
+    }
+
+    a {
+      background-color: $color-main;
+
+      &:hover,
+      &:focus {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+header {
+  #main-menu-links {
+    li {
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: $color-main;
+      }
+
+      a {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+#comments {
+  .comment-new {
+    border-left-color: $color-main;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  border-left-color: $color-main;
+}
+
+.switch {
+  input:checked+label {
+    background-color: $color-main;
+  }
+}
